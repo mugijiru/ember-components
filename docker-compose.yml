@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    command: ember serve -p 4200 -h '0.0.0.0'
+    volumes:
+      - .:/app
+    ports:
+      - "4200:4200"
