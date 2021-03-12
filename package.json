@@ -6,7 +6,7 @@
     "ember-addon"
   ],
   "publishConfig": {
-    "access", "restricted",
+    "access": "restricted",
     "registry": "https://npm.pkg.github.com"
   },
   "repository": "",
