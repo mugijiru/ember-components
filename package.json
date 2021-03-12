@@ -1,10 +1,14 @@
 {
-  "name": "ember-components",
+  "name": "@mugijiru/ember-components",
   "version": "0.0.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
   ],
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": "",
   "license": "MIT",
   "author": "",
