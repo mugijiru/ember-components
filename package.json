@@ -9,7 +9,7 @@
     "access": "restricted",
     "registry": "https://npm.pkg.github.com"
   },
-  "repository": "",
+  "repository": "https://github.com/mugijiru/ember-components",
   "license": "MIT",
   "author": "",
   "directories": {
