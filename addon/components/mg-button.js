@@ -1,7 +1,7 @@
-import Component from '@ember/component';
+import Ember from 'ember';
 import layout from '../templates/components/mg-button';
 
-export default Component.extend({
+export default Ember.Component.extend({
   layout,
   tagName: 'button',
   classNames: ['btn'],
