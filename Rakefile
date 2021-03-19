@@ -2,15 +2,15 @@ require "bundler/gem_tasks"
 require 'fileutils'
 require "rspec/core/rake_task"
 
-task :default => %i(clean_assets copy_assets)
+task :default => %i(clean_assets generate_assets)
 
 desc 'Clean assets'
 task :clean_assets do
   `rm -rf vendor/assets/javascripts/*`
 end
 
-desc 'Copy assets'
-task :copy_assets do
+desc 'Generate assets'
+task :generate_assets do
   path = 'vendor/assets/javascripts/ember-components'
   FileUtils.mkdir_p(path)
   FileUtils.cp('lib/ember/components/templates/ember-components.js', "#{path}.module.es6")
