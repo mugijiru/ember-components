@@ -6,7 +6,7 @@ task :default => %i(clean_assets copy_assets)
 
 desc 'Clean assets'
 task :clean_assets do
-  `rm -r vendor/assets/javascripts`
+  `rm -rf vendor/assets/javascripts/*`
 end
 
 desc 'Copy assets'
