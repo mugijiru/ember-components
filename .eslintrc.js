@@ -15,6 +15,7 @@ module.exports = {
     browser: true
   },
   rules: {
+    'ember/new-module-imports': 'off'
   },
   overrides: [
     // node files

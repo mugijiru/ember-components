@@ -1,7 +1,7 @@
-import Component from '@ember/component';
+import Ember from 'ember';
 import layout from '../templates/components/mg-toggle-switch';
 
-export default Component.extend({
+export default Ember.Component.extend({
   layout,
   classNames: ['c-toggle-switch'],
   classNameBindings: ['enabled:c-toggle-switch--enabled'],
