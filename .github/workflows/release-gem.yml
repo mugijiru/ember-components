@@ -16,12 +16,6 @@ jobs:
       with:
         bundler-cache: true
 
-    - name: Bundle Install
-      run: |
-        bundle config --delete deployment
-        bundle install --no-deployment
-        bundle update --jobs 4 --retry 3
-
     - name: Build gem
       run: |
         bundle exec rake clean_assets copy_assets build
