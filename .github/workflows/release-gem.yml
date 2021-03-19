@@ -18,7 +18,7 @@ jobs:
 
     - name: Build gem
       run: |
-        bundle exec rake clean_assets copy_assets build
+        bundle exec rake clean_assets generate_assets build
 
     - name: Publish to RubyGems
       run: |
