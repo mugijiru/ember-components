@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y google-chrome-stable
 RUN yarn global add ember-cli-update
 
 # install ember-cli
-RUN npm install -g ember-cli@2.18.2
+RUN npm install -g ember-cli@3.4.4
 
 WORKDIR /app
 
