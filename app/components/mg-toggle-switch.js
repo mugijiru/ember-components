@@ -1,1 +1,1 @@
-export { default } from 'ember-components/components/mg-toggle-switch';
+export { default } from '@mugijiru/ember-components/components/mg-toggle-switch';
