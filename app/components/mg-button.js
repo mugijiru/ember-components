@@ -1,1 +1,1 @@
-export { default } from 'ember-components/components/mg-button';
+export { default } from '@mugijiru/ember-components/components/mg-button';
