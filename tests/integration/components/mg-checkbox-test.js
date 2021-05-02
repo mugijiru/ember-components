@@ -1,18 +1,20 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('mg-checkbox', 'Integration | Component | mg checkbox', {
-  integration: true
-});
+module('Integration | Component | mg checkbox', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('checked=false の時は class に `c-checkbox--checked` が付与されない', function(assert) {
-  this.render(hbs`{{mg-checkbox checked=false}}`);
+  test('checked=false の時は class に `c-checkbox--checked` が付与されない', async function(assert) {
+    await render(hbs`{{mg-checkbox checked=false}}`);
 
-  assert.notOk(this.$('div').hasClass('c-checkbox--checked'));
-});
+    assert.dom('div').hasNoClass('c-checkbox--checked');
+  });
 
-test('checked=true の時は class に `c-checkbox--checked` が付与される', function(assert) {
-  this.render(hbs`{{mg-checkbox checked=true}}`);
+  test('checked=true の時は class に `c-checkbox--checked` が付与される', async function(assert) {
+    await render(hbs`{{mg-checkbox checked=true}}`);
 
-  assert.ok(this.$('div').hasClass('c-checkbox--checked'));
+    assert.dom('div').hasClass('c-checkbox--checked');
+  });
 });
