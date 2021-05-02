@@ -12,6 +12,6 @@ module('Integration | Component | mg button', function(hooks) {
 
     await render(hbs`{{mg-button text="TEXT"}}`);
 
-    assert.dom(this.element).hasText('TEXT');
+    assert.dom('.btn').hasText('TEXT');
   });
 });

@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, find } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | mg toggle-switch', function(hooks) {
@@ -29,12 +29,12 @@ module('Integration | Component | mg toggle-switch', function(hooks) {
   test('デフォルトではスイッチはオフ側に倒れている', async function(assert) {
     await render(hbs`{{mg-toggle-switch}}`);
 
-    assert.dom('div').hasNoClass('c-toggle-switch--enabled');
+    assert.dom('.c-toggle-switch').hasNoClass('c-toggle-switch--enabled');
   });
 
   test('enabled が true の時、スイッチはオン側に倒れている', async function(assert) {
     await render(hbs`{{mg-toggle-switch enabled=true}}`);
 
-    assert.dom('div').hasClass('c-toggle-switch--enabled');
+    assert.dom('.c-toggle-switch').hasClass('c-toggle-switch--enabled');
   });
 });
