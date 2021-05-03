@@ -1,16 +1,27 @@
-import Component from '@ember/component';
-import layout from '../templates/components/mg-button';
+import Component from '@glimmer/component'
 
-export default Component.extend({
-  layout,
-  tagName: 'button',
-  classNames: ['btn'],
-  classNameBindings: ['isPrimary:btn-primary', 'isDanger:btn-danger'],
-  attributeBindings: ['disabled'],
+export default class MgButton extends Component {
+  get disabled() {
+    return this.args.disabled ?? false;
+  }
 
-  isPrimary: false,
-  isDanger: false,
-  disabled: false,
+  get text() {
+    return this.args.text ?? '';
+  }
 
-  text: ''
-});
+  get isPrimary () {
+    return this.args.isPrimary ?? false
+  }
+
+  get isDanger () {
+    return this.args.isDanger ?? false
+  }
+
+  get classNamesString () {
+    const classList = ['btn']
+    if (this.isPrimary) { classList.push('btn-primary') }
+    if (this.isDanger)  { classList.push('btn-danger')  }
+
+    return classList.join(' ')
+  }
+}
