@@ -1,4 +1,5 @@
 import Component from '@glimmer/component'
+import { action } from '@ember/object';
 
 export default class MgButton extends Component {
   get disabled() {
@@ -23,5 +24,14 @@ export default class MgButton extends Component {
     if (this.isDanger)  { classList.push('btn-danger')  }
 
     return classList.join(' ')
+  }
+
+  @action
+  click () {
+    const onClick = this.args.onClick
+    if (typeof onClick !== 'function') {
+      return;
+    }
+    onClick()
   }
 }
