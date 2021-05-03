@@ -37,4 +37,16 @@ module('Integration | Component | mg toggle-switch', function(hooks) {
 
     assert.dom('.c-toggle-switch').hasClass('c-toggle-switch--enabled');
   });
+  test('enabled が切り替わると表示も切り替わる', async function(assert) {
+    assert.expect(2)
+
+    this.set('flag', false)
+    await render(hbs`<MgToggleSwitch @enabled={{this.flag}} />`);
+
+    assert.dom('.c-toggle-switch').doesNotHaveClass('c-toggle-switch--enabled');
+
+    this.set('flag', true)
+    assert.dom('.c-toggle-switch').hasClass('c-toggle-switch--enabled');
+  });
+
 });
