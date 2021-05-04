@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, click } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | mg button', function(hooks) {
@@ -47,4 +47,17 @@ module('Integration | Component | mg button', function(hooks) {
 
     assert.dom('.btn').doesNotHaveClass('btn-danger');
   });
+
+  test('click すると外部から渡されたアクションが実行される', async function(assert) {
+    assert.expect(1)
+
+    this.set('clickAction', (actual) => {
+      const expected = null
+      assert.equal(actual, expected)
+    });
+
+    await render(hbs`<MgButton @onClick={{this.clickAction}} />`)
+
+    click('.btn')
+  })
 });

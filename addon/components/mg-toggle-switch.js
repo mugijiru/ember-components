@@ -1,4 +1,5 @@
-import Component from '@glimmer/component';
+import Component from '@glimmer/component'
+import { action } from '@ember/object'
 
 export default class MgToggleSwitch extends Component {
   get label () { return this.args.label ?? '' }
@@ -10,5 +11,12 @@ export default class MgToggleSwitch extends Component {
     const classList = ['c-toggle-switch']
     if (this.enabled) { classList.push('c-toggle-switch--enabled') }
     return classList.join(' ')
+  }
+
+  @action
+  click () {
+    const onClick = this.args.onClick
+    if (typeof onClick !== 'function') { return }
+    onClick()
   }
 }

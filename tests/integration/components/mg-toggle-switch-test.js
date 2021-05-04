@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, click } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | mg toggle-switch', function(hooks) {
@@ -37,4 +37,29 @@ module('Integration | Component | mg toggle-switch', function(hooks) {
 
     assert.dom('.c-toggle-switch').hasClass('c-toggle-switch--enabled');
   });
+
+  test('enabled が切り替わると表示も切り替わる', async function(assert) {
+    assert.expect(2)
+
+    this.set('flag', false)
+    await render(hbs`<MgToggleSwitch @enabled={{this.flag}} />`);
+
+    assert.dom('.c-toggle-switch').doesNotHaveClass('c-toggle-switch--enabled');
+
+    this.set('flag', true)
+    assert.dom('.c-toggle-switch').hasClass('c-toggle-switch--enabled');
+  });
+
+  test('click すると外部から渡されたアクションが実行される', async function(assert) {
+    assert.expect(1)
+
+    this.set('clickAction', (actual) => {
+      const expected = null
+      assert.equal(actual, expected)
+    });
+
+    await render(hbs`<MgToggleSwitch @onClick={{this.clickAction}} />`)
+
+    click('.c-toggle-switch')
+  })
 });

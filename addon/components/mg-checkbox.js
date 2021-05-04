@@ -1,4 +1,5 @@
-import Component from '@glimmer/component';
+import Component from '@glimmer/component'
+import { action } from '@ember/object'
 
 export default class MgCheckbox extends Component {
   get checked () {
@@ -10,5 +11,12 @@ export default class MgCheckbox extends Component {
     if (this.checked) { classList.push('c-checkbox--checked') }
 
     return classList.join(' ')
+  }
+
+  @action
+  click () {
+    const onClick = this.args.onClick
+    if (typeof onClick !== 'function') { return }
+    onClick()
   }
 }
