@@ -1,36 +1,40 @@
 import Component from '@glimmer/component'
-import { action } from '@ember/object';
+import { action } from '@ember/object'
 
 export default class MgButton extends Component {
   get disabled() {
-    return this.args.disabled ?? false;
+    return this.args.disabled ?? false
   }
 
   get text() {
-    return this.args.text ?? '';
+    return this.args.text ?? ''
   }
 
-  get isPrimary () {
+  get isPrimary() {
     return this.args.isPrimary ?? false
   }
 
-  get isDanger () {
+  get isDanger() {
     return this.args.isDanger ?? false
   }
 
-  get classNamesString () {
+  get classNamesString() {
     const classList = ['btn']
-    if (this.isPrimary) { classList.push('btn-primary') }
-    if (this.isDanger)  { classList.push('btn-danger')  }
+    if (this.isPrimary) {
+      classList.push('btn-primary')
+    }
+    if (this.isDanger) {
+      classList.push('btn-danger')
+    }
 
     return classList.join(' ')
   }
 
   @action
-  click () {
+  click() {
     const onClick = this.args.onClick
     if (typeof onClick !== 'function') {
-      return;
+      return
     }
     onClick()
   }
