@@ -1,1 +1,1 @@
-export { default } from '@mugijiru/ember-components/components/mg-checkbox';
+export { default } from '@mugijiru/ember-components/components/mg-checkbox'
