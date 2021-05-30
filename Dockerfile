@@ -13,10 +13,4 @@ RUN npm install -g ember-cli
 
 WORKDIR /app
 
-COPY package.json /app/package.json
-COPY package-lock.json /app/package-lock.json
-RUN npm install
-
 COPY . /app
-
-CMD ['ember', 'serve', '-h', '0.0.0.0']
