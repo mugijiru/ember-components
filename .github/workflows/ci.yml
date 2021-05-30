@@ -12,6 +12,13 @@ jobs:
       with:
         node-version: '14'
 
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: npm-${{ hashFiles('package-lock.json') }}
+        restore-keys: npm-
+
     - name: install ember-cli
       run: npm install -g ember-cli
 
