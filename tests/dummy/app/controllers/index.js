@@ -6,11 +6,11 @@ export default class Index extends Controller {
   @tracked checkboxState = false
   @tracked toggleSwitchState = false
 
-  @action toggleCheckbox () {
+  @action toggleCheckbox() {
     this.checkboxState = !this.checkboxState
   }
 
-  @action toggleStateToggleSwitch () {
+  @action toggleStateToggleSwitch() {
     this.toggleSwitchState = !this.toggleSwitchState
   }
 }

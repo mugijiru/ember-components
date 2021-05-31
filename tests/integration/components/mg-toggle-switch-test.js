@@ -44,7 +44,9 @@ module('Integration | Component | mg toggle-switch', function (hooks) {
     this.set('flag', false)
     await render(hbs`<MgToggleSwitch @enabled={{this.flag}} />`)
 
-    assert.dom('.mg-toggle-switch').doesNotHaveClass('mg-toggle-switch--enabled')
+    assert
+      .dom('.mg-toggle-switch')
+      .doesNotHaveClass('mg-toggle-switch--enabled')
 
     this.set('flag', true)
     assert.dom('.mg-toggle-switch').hasClass('mg-toggle-switch--enabled')
