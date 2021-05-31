@@ -1,0 +1,31 @@
+$color-primary-1: #5288bc;
+
+.mg-button {
+  display: inline-block;
+  min-width: 120px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: $color-primary-1;
+  border: 0;
+  border-radius: 3px;
+  transition: .3s;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &--danger {
+    color: #fff;
+    background-color: #c33;
+  }
+
+  &--primary {
+    color: #fff;
+    background-color: $color-primary-4;
+  }
+}
