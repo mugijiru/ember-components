@@ -7,9 +7,9 @@ export default class MgCheckbox extends Component {
   }
 
   get classNamesString() {
-    const classList = ['c-checkbox']
+    const classList = ['mg-checkbox']
     if (this.checked) {
-      classList.push('c-checkbox--checked')
+      classList.push('mg-checkbox--checked')
     }
 
     return classList.join(' ')
