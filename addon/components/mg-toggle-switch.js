@@ -16,9 +16,9 @@ export default class MgToggleSwitch extends Component {
   }
 
   get classNamesString() {
-    const classList = ['c-toggle-switch']
+    const classList = ['mg-toggle-switch']
     if (this.enabled) {
-      classList.push('c-toggle-switch--enabled')
+      classList.push('mg-toggle-switch--enabled')
     }
     return classList.join(' ')
   }

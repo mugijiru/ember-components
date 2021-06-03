@@ -19,12 +19,12 @@ export default class MgButton extends Component {
   }
 
   get classNamesString() {
-    const classList = ['btn']
+    const classList = ['mg-button']
     if (this.isPrimary) {
-      classList.push('btn-primary')
+      classList.push('mg-button--primary')
     }
     if (this.isDanger) {
-      classList.push('btn-danger')
+      classList.push('mg-button--danger')
     }
 
     return classList.join(' ')

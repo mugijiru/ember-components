@@ -1,0 +1,69 @@
+.mg-toggle-switch {
+  display: grid;
+  grid-template-row: auto 25px;
+  grid-template-columns: auto 50px auto;
+  gap: 4px;
+  background-color: transparent;
+  border: 0;
+
+  &--enabled &__switch::before {
+    transform: scaleX(1);
+  }
+
+  &--enabled &__switch::after {
+    transform: translateX(25px);
+  }
+
+  &__label {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  &__off-label,
+  &__on-label {
+    font-weight: bold;
+  }
+
+  &__off-label {
+    text-align: right;
+  }
+
+  &__on-label {
+    text-align: center;
+  }
+
+  &__switch {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    overflow: hidden;
+    background-color: #ddd;
+    border-radius: 25px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 25px;
+      content: '';
+      background-color: $lightGreen;
+      transition: $defaultTransition;
+      transform: scaleX(0);
+      transform-origin: top left;
+    }
+
+    &::after {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 21px;
+      height: 21px;
+      content: '';
+      background-color: #fff;
+      border-radius: 25px;
+      transition: $defaultTransition;
+    }
+  }
+}
