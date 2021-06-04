@@ -61,10 +61,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # - uses: reviewdog/action-setup@v1
-    #   with:
-    #     reviewdog_version: latest
-
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
@@ -86,12 +82,6 @@ jobs:
         github_token: ${{ secrets.github_token }}
         reporter: github-pr-review
         stylelint_input: 'addon/styles/**/*.scss'
-
-    # - name: Run reviewdog
-    #   env:
-    #     REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   run: |
-    #     npx stylelint 'addon/styles/**/*.scss' | reviewdog -f="stylelint" -name="stylelint" -reporter=github-pr-check -fail-on-error=true
 
     - name: Notify slack build result
       uses: lazy-actions/slatify@master
