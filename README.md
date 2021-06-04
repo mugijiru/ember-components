@@ -1,7 +1,12 @@
 @mugijiru/ember-components
 ==============================================================================
 
-[Short description of the addon.]
+[![test](https://github.com/mugijiru/ember-components/actions/workflows/ci.yml/badge.svg)](https://github.com/mugijiru/ember-components/actions/workflows/ci.yml)
+![GitHub top language](https://img.shields.io/github/languages/top/mugijiru/ember-components)
+![GitHub Release Date](https://img.shields.io/github/release-date/mugijiru/ember-components)
+![GitHub last commit](https://img.shields.io/github/last-commit/mugijiru/ember-components)
+
+Ember.js アプリケーション用コンポーネントライブラリ。
 
 
 Compatibility
