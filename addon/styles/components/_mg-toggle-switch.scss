@@ -1,18 +1,10 @@
 .mg-toggle-switch {
   display: grid;
-  grid-template-row: auto 25px;
+  grid-template-rows: auto 25px;
   grid-template-columns: auto 50px auto;
   gap: 4px;
   background-color: transparent;
   border: 0;
-
-  &--enabled &__switch::before {
-    transform: scaleX(1);
-  }
-
-  &--enabled &__switch::after {
-    transform: translateX(25px);
-  }
 
   &__label {
     grid-row: 1;
@@ -20,8 +12,7 @@
     text-align: center;
   }
 
-  &__off-label,
-  &__on-label {
+  &__off-label,  &__on-label {
     font-weight: bold;
   }
 
@@ -65,5 +56,13 @@
       border-radius: 25px;
       transition: $defaultTransition;
     }
+  }
+
+  &--enabled &__switch::before {
+    transform: scaleX(1);
+  }
+
+  &--enabled &__switch::after {
+    transform: translateX(25px);
   }
 }
