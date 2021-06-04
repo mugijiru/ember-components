@@ -29,8 +29,15 @@ jobs:
         npm install
 
     - name: Run ember test
+      env:
+        COVERAGE: true
       run:
         ember test
+
+    - name: publish code coverage
+      uses: paambaati/codeclimate-action@v2.7.5
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE_REPORTER_ID }}
 
     - name: Notify slack build result
       uses: homoluctus/slatify@master
