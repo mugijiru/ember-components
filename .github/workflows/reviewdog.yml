@@ -79,6 +79,7 @@ jobs:
         reporter: github-pr-review
         stylelint_input: 'addon/styles/**/*.scss'
         fail_on_error: true
+        stylelint_config: '.stylelintrc.yml'
 
     - name: Notify slack build result
       uses: lazy-actions/slatify@master
